@@ -1,9 +1,7 @@
-import { lazy } from "react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
-  createRootRouteWithContext,
+  createRootRoute,
   useRouter,
   HeadContent,
   Scripts,
@@ -15,9 +13,6 @@ import { SmoothScroll } from "@/components/motion/SmoothScroll";
 
 import { ChatbotWidget } from "@/components/leads/ChatbotWidget";
 import { ExitIntentPopup } from "@/components/leads/ExitIntentPopup";
-
-
-
 
 function NotFoundComponent() {
   return (
@@ -40,11 +35,8 @@ function NotFoundComponent() {
   );
 }
 
-const ErrorComponent = lazy(async () => ({
-  default: function ErrorComponent({ error, reset }: ErrorComponentProps) {
-  console.error(error);
+function ErrorComponent({ reset }: ErrorComponentProps) {
   const router = useRouter();
-
   return (
     <div className="flex min-h-screen items-center justify-center bg-paper px-6 text-ink">
       <div className="max-w-md">
@@ -56,13 +48,7 @@ const ErrorComponent = lazy(async () => ({
           Ocorreu um problema ao exibir o conteúdo. Tente novamente ou volte ao início.
         </p>
         <div className="mt-9 flex flex-wrap gap-3">
-          <button
-            onClick={() => {
-              router.invalidate();
-              reset();
-            }}
-            className="btn-solid"
-          >
+          <button onClick={() => { router.invalidate(); reset(); }} className="btn-solid">
             Tentar novamente <span aria-hidden className="btn-arrow">→</span>
           </button>
           <a href="/" className="btn-ghost">
@@ -73,11 +59,8 @@ const ErrorComponent = lazy(async () => ({
     </div>
   );
 }
-}));
 
-
-
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -153,15 +136,13 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
-
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
       <SmoothScroll />
       <div aria-hidden className="paper-grain" />
       <Outlet />
       <ChatbotWidget />
       <ExitIntentPopup />
-    </QueryClientProvider>
+    </>
   );
 }
