@@ -1,0 +1,43 @@
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/leads/ChatbotWidget.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/leads/ExitIntentPopup.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/motion/FadeUp.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/site/About.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/site/Approach.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/site/ContactSection.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/site/Hero.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/site/PageShell.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/site/Practice.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/site/Wordmark.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/main.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/styles.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'vercel.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'vite.config.ts', LF will be replaced by CRLF the next time Git touches it
+ bun.lock                                 |   1 [31m-[m
+ index.html                               |  31 [32m++[m[31m-[m
+ package-lock.json                        | 415 [32m+++[m[31m----------------------------[m
+ package.json                             |  12 [32m+[m[31m-[m
+ src/components/leads/ChatbotWidget.tsx   |  14 [32m+[m[31m-[m
+ src/components/leads/ExitIntentPopup.tsx |  44 [32m++[m[31m--[m
+ src/components/motion/FadeUp.tsx         |  18 [32m+[m[31m-[m
+ src/components/site/About.tsx            | 119 [32m+++++[m[31m----[m
+ src/components/site/Approach.tsx         |  65 [32m++++[m[31m-[m
+ src/components/site/ContactSection.tsx   | 185 [32m++++++++[m[31m------[m
+ src/components/site/Hero.tsx             |  49 [32m+++[m[31m-[m
+ src/components/site/PageShell.tsx        |   8 [32m+[m[31m-[m
+ src/components/site/Practice.tsx         |  73 [32m++++[m[31m--[m
+ src/components/site/SiteFooter.tsx       |  69 [31m-----[m
+ src/components/site/SiteHeader.tsx       | 209 [31m----------------[m
+ src/components/site/Wordmark.tsx         |  11 [32m+[m[31m-[m
+ src/main.tsx                             |  32 [32m+[m[31m--[m
+ src/routeTree.gen.ts                     |  77 [31m------[m
+ src/router.tsx                           |  12 [31m-[m
+ src/routes/__root.tsx                    | 148 [31m-----------[m
+ src/routes/index.tsx                     |  40 [31m---[m
+ src/routes/privacidade.tsx               | 129 [31m----------[m
+ src/ssr.tsx                              |   4 [31m-[m
+ src/styles.css                           | 176 [32m++++++++++[m[31m---[m
+ vite.config.ts                           |   3 [32m+[m[31m-[m
+ 25 files changed, 601 insertions(+), 1343 deletions(-)

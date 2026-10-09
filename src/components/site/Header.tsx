@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Link } from "@tanstack/react-router";
 import { Wordmark } from "./Wordmark";
 
 const NAV = [
@@ -9,7 +8,7 @@ const NAV = [
   { label: "Contato", href: "#contato" },
 ];
 
-export function SiteHeader({ light = false }: { light?: boolean }) {
+export function Header({ light = false }: { light?: boolean }) {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -93,7 +92,9 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
 
   return (
     <header className={`sticky top-0 z-40 transition-colors duration-500 ${bgClass}`}>
-      <div className={`mx-auto max-w-[1400px] flex items-center justify-between px-6 md:px-10 lg:px-16 transition-[padding] duration-500 ${scrolled ? "py-3.5" : "py-5"}`}>
+      <div
+        className={`mx-auto max-w-[1400px] flex items-center justify-between px-6 md:px-10 lg:px-16 transition-[padding] duration-500 ${scrolled ? "py-3.5" : "py-5"}`}
+      >
         <Wordmark />
 
         <nav className="hidden md:flex items-center gap-10 font-mono text-[11px] tracking-mono uppercase text-ink-2">
@@ -113,7 +114,9 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
           className="hidden md:inline-flex btn-solid !py-3 !px-5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
         >
           Falar com o advogado
-          <span aria-hidden className="btn-arrow">→</span>
+          <span aria-hidden className="btn-arrow">
+            →
+          </span>
         </a>
 
         <button
@@ -161,7 +164,16 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
                 className="p-1 group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
               >
                 <span className="flex items-center justify-center w-9 h-9 border border-ink text-ink transition-colors duration-300 group-hover:bg-ink group-hover:text-paper">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="square" aria-hidden="true">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                    strokeLinecap="square"
+                    aria-hidden="true"
+                  >
                     <path d="M2 2L12 12" />
                     <path d="M12 2L2 12" />
                   </svg>
@@ -169,7 +181,10 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
               </button>
             </div>
 
-            <nav className="flex-1 flex flex-col justify-center px-6 gap-1" aria-label="Navegação móvel">
+            <nav
+              className="flex-1 flex flex-col justify-center px-6 gap-1"
+              aria-label="Navegação móvel"
+            >
               {NAV.map((i, idx) => (
                 <a
                   key={i.href}
@@ -198,7 +213,9 @@ export function SiteHeader({ light = false }: { light?: boolean }) {
                 style={{ transitionDelay: visible ? `${120 + NAV.length * 60}ms` : "0ms" }}
               >
                 Falar com o advogado
-                <span aria-hidden className="btn-arrow">→</span>
+                <span aria-hidden className="btn-arrow">
+                  →
+                </span>
               </a>
             </div>
           </div>

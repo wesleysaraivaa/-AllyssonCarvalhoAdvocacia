@@ -1,8 +1,11 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist/client",
+  "outputDirectory": "dist",
   "framework": null,
   "rewrites": [
-    { "source": "/((?!assets/|favicon\\.png|og-image\\.jpg).*)", "destination": "/index.html" }
+    {
+      "source": "/((?!assets/|favicon\\.png|og-image\\.jpg).*)",
+      "destination": "/index.html"
+    }
   ]
 }

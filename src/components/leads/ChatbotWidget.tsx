@@ -3,14 +3,7 @@ import { openWhatsApp } from "@/lib/whatsapp";
 
 type Step = 0 | 1 | 2 | 3 | 4; // 0=closed welcome, 1..3=questions, 4=done
 
-const AREAS = [
-  "Previdenciário",
-  "Trabalhista",
-  "Família",
-  "Civil",
-  "Consumidor",
-  "Outro",
-];
+const AREAS = ["Previdenciário", "Trabalhista", "Família", "Civil", "Consumidor", "Outro"];
 
 /**
  * ChatbotWidget — triagem editorial em 3 perguntas.
@@ -36,7 +29,10 @@ export function ChatbotWidget() {
     setSending(true);
     setErr(null);
     try {
-      if (!website) openWhatsApp(`Olá! Vim pela triagem do site.\nÁrea: ${area}\nSituação: ${situacao}\nContato: ${finalContato}`);
+      if (!website)
+        openWhatsApp(
+          `Olá! Vim pela triagem do site.\nÁrea: ${area}\nSituação: ${situacao}\nContato: ${finalContato}`,
+        );
       setStep(4);
     } catch (e) {
       setErr(e instanceof Error ? e.message : "Erro ao enviar.");

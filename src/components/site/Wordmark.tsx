@@ -1,5 +1,3 @@
-import { Link } from "@tanstack/react-router";
-
 export function Wordmark({
   size = "sm",
   className = "",
@@ -13,7 +11,11 @@ export function Wordmark({
   const mutedClass = light ? "text-paper/60" : "text-ink-muted";
 
   return (
-    <Link to="/" className={`inline-block leading-none ${className}`} aria-label="Allysson Carvalho Advocacia — início">
+    <a
+      href="#topo"
+      className={`inline-block leading-none ${className}`}
+      aria-label="Allysson Carvalho Advocacia — início"
+    >
       <span
         className={`font-display block ${inkClass}`}
         style={{
@@ -24,6 +26,7 @@ export function Wordmark({
       >
         Allysson Carvalho
       </span>
+
       <span
         className={`block font-mono uppercase ${mutedClass}`}
         style={{
@@ -34,6 +37,6 @@ export function Wordmark({
       >
         Advocacia
       </span>
-    </Link>
+    </a>
   );
 }

@@ -11,7 +11,15 @@ interface FadeUpProps {
   [key: string]: unknown;
 }
 
-export function FadeUp({ as: Tag = "div", delay = 0, stagger = 0, className = "", children, style, ...rest }: FadeUpProps) {
+export function FadeUp({
+  as: Tag = "div",
+  delay = 0,
+  stagger = 0,
+  className = "",
+  children,
+  style,
+  ...rest
+}: FadeUpProps) {
   const ref = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -26,7 +34,7 @@ export function FadeUp({ as: Tag = "div", delay = 0, stagger = 0, className = ""
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" },
     );
     io.observe(el);
     return () => io.disconnect();
@@ -35,7 +43,11 @@ export function FadeUp({ as: Tag = "div", delay = 0, stagger = 0, className = ""
   const cls = stagger > 0 ? `reveal-stagger ${className}` : `reveal ${className}`;
   const mergedStyle: CSSProperties =
     stagger > 0
-      ? ({ "--stagger": `${stagger}ms`, "--stagger-delay": `${delay}ms`, ...style } as CSSProperties)
+      ? ({
+          "--stagger": `${stagger}ms`,
+          "--stagger-delay": `${delay}ms`,
+          ...style,
+        } as CSSProperties)
       : { transitionDelay: `${delay}ms`, ...style };
 
   return (

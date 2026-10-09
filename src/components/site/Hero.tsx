@@ -70,7 +70,9 @@ export function Hero() {
 
   return (
     <section id="topo" ref={sectionRef} className="relative border-b border-rule overflow-hidden">
-      <div aria-hidden className="hero-seal hidden lg:grid">AC</div>
+      <div aria-hidden className="hero-seal hidden lg:grid">
+        AC
+      </div>
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 lg:px-16 md:min-h-[88vh] flex flex-col md:flex-row">
         {/* Left Branding & Info */}
         <div className="flex-1 md:pr-16 pt-12 pb-10 md:py-20 flex flex-col justify-between">
@@ -79,14 +81,19 @@ export function Hero() {
               OAB/CE 44.325
             </span>
             <h1 className="font-display text-ink text-[3.25rem] sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.9] md:leading-[0.88] tracking-tight">
-              <span className="hero-line"><span>Allysson</span></span>
-              <span className="hero-line"><span>Carvalho</span></span>
+              <span className="hero-line">
+                <span>Allysson</span>
+              </span>
+              <span className="hero-line">
+                <span>Carvalho</span>
+              </span>
               <span className="hero-line hero-line--role mt-3 md:mt-5 text-[1.6rem] sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-[1.1] tracking-[0.01em]">
                 <span>Advocacia</span>
               </span>
             </h1>
             <p className="hero-copy mt-6 md:mt-10 max-w-md text-lg md:text-2xl font-light leading-relaxed italic font-display text-ink-2">
-              Excelência jurídica em Ubajara, com foco dedicado ao Direito Previdenciário e assistência social.
+              Excelência jurídica em Ubajara, com foco dedicado ao Direito Previdenciário e
+              assistência social.
             </p>
           </div>
 
@@ -102,7 +109,9 @@ export function Hero() {
               />
               <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-paper to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
-                <p className="text-[10px] uppercase tracking-[0.25em] opacity-60 font-mono">Sede Própria</p>
+                <p className="text-[10px] uppercase tracking-[0.25em] opacity-60 font-mono">
+                  Sede Própria
+                </p>
                 <p className="font-display italic text-base">Ubajara, Ceará</p>
               </div>
             </div>
@@ -110,18 +119,29 @@ export function Hero() {
 
           <div className="hero-actions mt-10 md:mt-12 space-y-5">
             <a href="#contato" className="hover-rule group flex items-center justify-between">
-              <span className="uppercase tracking-widest text-[11px] font-mono font-medium">Agendar atendimento</span>
-              <span aria-hidden className="btn-arrow font-display italic">→</span>
+              <span className="uppercase tracking-widest text-[11px] font-mono font-medium">
+                Agendar atendimento
+              </span>
+              <span aria-hidden className="btn-arrow font-display italic">
+                →
+              </span>
             </a>
             <a href="#atuacao" className="hover-rule group flex items-center justify-between">
-              <span className="uppercase tracking-widest text-[11px] font-mono font-medium">Conhecer áreas de atuação</span>
-              <span aria-hidden className="btn-arrow font-display italic">↘</span>
+              <span className="uppercase tracking-widest text-[11px] font-mono font-medium">
+                Conhecer áreas de atuação
+              </span>
+              <span aria-hidden className="btn-arrow font-display italic">
+                ↘
+              </span>
             </a>
           </div>
         </div>
 
         {/* Right Image/Portrait (desktop) */}
-        <div className="hero-portrait hidden md:flex flex-1 bg-paper-2 relative overflow-hidden items-end justify-center" style={{ perspective: "900px" }}>
+        <div
+          className="hero-portrait hidden md:flex flex-1 bg-paper-2 relative overflow-hidden items-end justify-center"
+          style={{ perspective: "900px" }}
+        >
           <img
             ref={imgRef}
             src={portrait}
@@ -130,9 +150,14 @@ export function Hero() {
             loading="eager"
             fetchPriority="high"
           />
-          <div aria-hidden className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-paper/90 to-transparent z-[1]" />
+          <div
+            aria-hidden
+            className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-paper/90 to-transparent z-[1]"
+          />
           <div className="absolute bottom-8 right-8 text-right z-10">
-            <p className="text-[10px] uppercase tracking-[0.25em] opacity-60 font-mono">Sede Própria</p>
+            <p className="text-[10px] uppercase tracking-[0.25em] opacity-60 font-mono">
+              Sede Própria
+            </p>
             <p className="font-display italic text-lg">Ubajara, Ceará</p>
           </div>
         </div>
