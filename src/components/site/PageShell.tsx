@@ -1,12 +1,12 @@
-import { SiteHeader } from "./SiteHeader";
-import { SiteFooter } from "./SiteFooter";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
 
 export function PageShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative z-10 text-ink min-h-screen flex flex-col">
-      <SiteHeader />
+      <Header />
       <main className="flex-1">{children}</main>
-      <SiteFooter />
+      <Footer />
     </div>
   );
 }

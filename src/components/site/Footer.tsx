@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { Wordmark } from "./Wordmark";
 
 const NAV = [
@@ -8,7 +7,7 @@ const NAV = [
   { label: "Contato", href: "#contato" },
 ];
 
-export function SiteFooter() {
+export function Footer() {
   return (
     <footer className="bg-ink text-paper">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 lg:px-16 py-16 md:py-20">
@@ -16,7 +15,8 @@ export function SiteFooter() {
           <div className="lg:col-span-5">
             <Wordmark light />
             <p className="mt-8 max-w-[36ch] text-paper/60 text-[15px] leading-relaxed">
-              Atendimento jurídico em Ubajara/CE com dedicação às causas previdenciárias, criminais, de família e cíveis.
+              Atendimento jurídico em Ubajara/CE com dedicação às causas previdenciárias, criminais,
+              de família e cíveis.
             </p>
           </div>
 
@@ -56,12 +56,13 @@ export function SiteFooter() {
           <p className="font-mono tracking-[0.05em]">
             © {new Date().getFullYear()} Allysson Carvalho Advocacia
           </p>
-          <Link to="/privacidade" className="font-sans text-[13px] text-paper/60 hover:text-paper transition-colors">
+          <a
+            href="/privacidade.html"
+            className="font-sans text-[13px] text-paper/60 hover:text-paper transition-colors"
+          >
             Política de Privacidade
-          </Link>
-          <p className="font-sans text-[13px]">
-            Site criado com critério e discrição.
-          </p>
+          </a>
+          <p className="font-sans text-[13px]">Site criado com critério e discrição.</p>
         </div>
       </div>
     </footer>

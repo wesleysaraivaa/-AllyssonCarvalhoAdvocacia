@@ -66,7 +66,8 @@ export function ExitIntentPopup() {
     setSending(true);
     setErr(null);
     try {
-      if (!website) openWhatsApp(`Olá! Meu nome é ${nome}.\nContato: ${contato}\nSituação: ${situacao}`);
+      if (!website)
+        openWhatsApp(`Olá! Meu nome é ${nome}.\nContato: ${contato}\nSituação: ${situacao}`);
       setDone(true);
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ submitted: true }));
     } catch (e) {
@@ -141,7 +142,9 @@ export function ExitIntentPopup() {
 
               <div className="space-y-4">
                 <div>
-                  <label htmlFor="exit-nome" className="sr-only">Nome</label>
+                  <label htmlFor="exit-nome" className="sr-only">
+                    Nome
+                  </label>
                   <input
                     ref={firstInputRef}
                     id="exit-nome"
@@ -157,7 +160,9 @@ export function ExitIntentPopup() {
                 </div>
 
                 <div>
-                  <label htmlFor="exit-contato" className="sr-only">Contato</label>
+                  <label htmlFor="exit-contato" className="sr-only">
+                    Contato
+                  </label>
                   <input
                     id="exit-contato"
                     type="text"
@@ -172,7 +177,9 @@ export function ExitIntentPopup() {
                 </div>
 
                 <div>
-                  <label htmlFor="exit-situacao" className="sr-only">Situação</label>
+                  <label htmlFor="exit-situacao" className="sr-only">
+                    Situação
+                  </label>
                   <textarea
                     id="exit-situacao"
                     value={situacao}
@@ -225,32 +232,33 @@ export function ExitIntentPopup() {
                   disabled={sending || !consentimento}
                   className="btn-solid disabled:opacity-40 disabled:cursor-not-allowed"
                 >
-                  {sending ? "Enviando…" : "Receber análise"} <span aria-hidden className="btn-arrow">→</span>
+                  {sending ? "Enviando…" : "Receber análise"}{" "}
+                  <span aria-hidden className="btn-arrow">
+                    →
+                  </span>
                 </button>
-                <button
-                  type="button"
-                  onClick={dismiss}
-                  className="btn-ghost"
-                >
+                <button type="button" onClick={dismiss} className="btn-ghost">
                   Agora não
                 </button>
               </div>
             </form>
           ) : (
             <div className="py-6">
-              <p className="font-mono text-[10px] tracking-mono uppercase text-brass mb-3">Mensagem enviada</p>
+              <p className="font-mono text-[10px] tracking-mono uppercase text-brass mb-3">
+                Mensagem enviada
+              </p>
               <h3 className="font-display text-[22px] leading-tight tracking-[-0.02em] text-ink mb-3">
                 Recebemos o seu relato.
               </h3>
               <p className="font-sans text-[15px] leading-[1.7] text-ink-2">
-                A equipe do escritório vai analisar a situação e retornar no contato informado em até 1 dia útil.
+                A equipe do escritório vai analisar a situação e retornar no contato informado em
+                até 1 dia útil.
               </p>
-              <button
-                type="button"
-                onClick={dismiss}
-                className="mt-6 btn-solid"
-              >
-                Voltar ao site <span aria-hidden className="btn-arrow">→</span>
+              <button type="button" onClick={dismiss} className="mt-6 btn-solid">
+                Voltar ao site{" "}
+                <span aria-hidden className="btn-arrow">
+                  →
+                </span>
               </button>
             </div>
           )}

@@ -131,10 +131,18 @@
     animation: editorial-enter 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
-  .hero-copy { animation-delay: 320ms; }
-  .hero-actions { animation-delay: 420ms; }
-  .hero-portrait { animation-delay: 150ms; }
-  .hero-seal { animation: editorial-enter 1s cubic-bezier(0.16, 1, 0.3, 1) 550ms both; }
+  .hero-copy {
+    animation-delay: 320ms;
+  }
+  .hero-actions {
+    animation-delay: 420ms;
+  }
+  .hero-portrait {
+    animation-delay: 150ms;
+  }
+  .hero-seal {
+    animation: editorial-enter 1s cubic-bezier(0.16, 1, 0.3, 1) 550ms both;
+  }
 
   /* Título do Hero: revelação por linha com máscara */
   .hero-line {
@@ -148,8 +156,12 @@
     transform: translateY(112%);
     animation: hero-line-up 1s cubic-bezier(0.16, 1, 0.3, 1) 120ms forwards;
   }
-  .hero-line:nth-child(2) > span { animation-delay: 240ms; }
-  .hero-line:nth-child(3) > span { animation-delay: 360ms; }
+  .hero-line:nth-child(2) > span {
+    animation-delay: 240ms;
+  }
+  .hero-line:nth-child(3) > span {
+    animation-delay: 360ms;
+  }
   .hero-line--role > span {
     font-style: italic;
     font-weight: 400;
@@ -162,7 +174,9 @@
     will-change: transform;
   }
 
-  .practice-row { position: relative; }
+  .practice-row {
+    position: relative;
+  }
   .practice-row::before {
     content: "";
     position: absolute;
@@ -173,22 +187,49 @@
     background: var(--brass-light);
     transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .practice-row.is-active::before { width: 100%; }
-  .practice-row.is-active > span:first-child { color: var(--paper); padding-left: 1rem; }
-  .practice-row > span:first-child { transition: color 0.3s ease, padding 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+  .practice-row.is-active::before {
+    width: 100%;
+  }
+  .practice-row.is-active > span:first-child {
+    color: var(--paper);
+    padding-left: 1rem;
+  }
+  .practice-row > span:first-child {
+    transition:
+      color 0.3s ease,
+      padding 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
 
-  .case-sheet { transform-origin: bottom left; }
-  .case-sheet.is-sorted { box-shadow: 0 18px 45px color-mix(in oklab, var(--ink) 9%, transparent); }
+  .case-sheet {
+    transform-origin: bottom left;
+  }
+  .case-sheet.is-sorted {
+    box-shadow: 0 18px 45px color-mix(in oklab, var(--ink) 9%, transparent);
+  }
 
   .dossier-card {
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease, background-color 0.4s ease;
+    transition:
+      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.6s ease,
+      background-color 0.4s ease;
   }
-  .dossier-body { transition: grid-template-rows 0.55s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease; }
+  .dossier-body {
+    transition:
+      grid-template-rows 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.45s ease;
+  }
 
   @media (min-width: 768px) {
-    .dossier-card { margin-left: -1px; transform: translateY(0) rotate(-0.5deg); }
-    .dossier-card:nth-child(2) { transform: translateY(14px) rotate(0.4deg); }
-    .dossier-card:nth-child(3) { transform: translateY(28px) rotate(-0.3deg); }
+    .dossier-card {
+      margin-left: -1px;
+      transform: translateY(0) rotate(-0.5deg);
+    }
+    .dossier-card:nth-child(2) {
+      transform: translateY(14px) rotate(0.4deg);
+    }
+    .dossier-card:nth-child(3) {
+      transform: translateY(28px) rotate(-0.3deg);
+    }
     .dossier-card.is-active {
       transform: translateY(-8px) rotate(0deg);
       box-shadow: 0 22px 50px color-mix(in oklab, var(--ink) 12%, transparent);
@@ -196,23 +237,45 @@
   }
 
   @keyframes editorial-enter {
-    from { opacity: 0; transform: translateY(20px); clip-path: inset(0 0 18% 0); }
-    to { opacity: 1; transform: translateY(0); clip-path: inset(0); }
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+      clip-path: inset(0 0 18% 0);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      clip-path: inset(0);
+    }
   }
 
   @keyframes hero-line-up {
-    from { transform: translateY(112%); }
-    to { transform: translateY(0); }
+    from {
+      transform: translateY(112%);
+    }
+    to {
+      transform: translateY(0);
+    }
   }
 
   @keyframes portrait-zoom {
-    from { transform: scale(1.09); }
-    to { transform: scale(1); }
+    from {
+      transform: scale(1.09);
+    }
+    to {
+      transform: scale(1);
+    }
   }
 
   @keyframes fade-swap {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .practice-detail {
@@ -220,14 +283,31 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .hero-intro, .hero-copy, .hero-actions, .hero-portrait, .hero-seal { animation: none; }
-    .hero-line > span { animation: none; transform: none; }
-    .hero-portrait-img { animation: none; }
-    .practice-detail { animation: none; }
-    .dossier-card, .dossier-body { transition: none; }
-    html { scroll-behavior: auto; }
+    .hero-intro,
+    .hero-copy,
+    .hero-actions,
+    .hero-portrait,
+    .hero-seal {
+      animation: none;
+    }
+    .hero-line > span {
+      animation: none;
+      transform: none;
+    }
+    .hero-portrait-img {
+      animation: none;
+    }
+    .practice-detail {
+      animation: none;
+    }
+    .dossier-card,
+    .dossier-body {
+      transition: none;
+    }
+    html {
+      scroll-behavior: auto;
+    }
   }
-
 }
 
 @layer components {
@@ -333,14 +413,30 @@
     transform: translateY(0);
   }
 
-  .reveal-stagger > *:nth-child(1) { transition-delay: calc(var(--stagger-delay, 0ms) + var(--stagger, 90ms) * 0); }
-  .reveal-stagger > *:nth-child(2) { transition-delay: calc(var(--stagger-delay, 0ms) + var(--stagger, 90ms) * 1); }
-  .reveal-stagger > *:nth-child(3) { transition-delay: calc(var(--stagger-delay, 0ms) + var(--stagger, 90ms) * 2); }
-  .reveal-stagger > *:nth-child(4) { transition-delay: calc(var(--stagger-delay, 0ms) + var(--stagger, 90ms) * 3); }
-  .reveal-stagger > *:nth-child(5) { transition-delay: calc(var(--stagger-delay, 0ms) + var(--stagger, 90ms) * 4); }
-  .reveal-stagger > *:nth-child(6) { transition-delay: calc(var(--stagger-delay, 0ms) + var(--stagger, 90ms) * 5); }
-  .reveal-stagger > *:nth-child(7) { transition-delay: calc(var(--stagger-delay, 0ms) + var(--stagger, 90ms) * 6); }
-  .reveal-stagger > *:nth-child(8) { transition-delay: calc(var(--stagger-delay, 0ms) + var(--stagger, 90ms) * 7); }
+  .reveal-stagger > *:nth-child(1) {
+    transition-delay: calc(var(--stagger-delay, 0ms) + var(--stagger, 90ms) * 0);
+  }
+  .reveal-stagger > *:nth-child(2) {
+    transition-delay: calc(var(--stagger-delay, 0ms) + var(--stagger, 90ms) * 1);
+  }
+  .reveal-stagger > *:nth-child(3) {
+    transition-delay: calc(var(--stagger-delay, 0ms) + var(--stagger, 90ms) * 2);
+  }
+  .reveal-stagger > *:nth-child(4) {
+    transition-delay: calc(var(--stagger-delay, 0ms) + var(--stagger, 90ms) * 3);
+  }
+  .reveal-stagger > *:nth-child(5) {
+    transition-delay: calc(var(--stagger-delay, 0ms) + var(--stagger, 90ms) * 4);
+  }
+  .reveal-stagger > *:nth-child(6) {
+    transition-delay: calc(var(--stagger-delay, 0ms) + var(--stagger, 90ms) * 5);
+  }
+  .reveal-stagger > *:nth-child(7) {
+    transition-delay: calc(var(--stagger-delay, 0ms) + var(--stagger, 90ms) * 6);
+  }
+  .reveal-stagger > *:nth-child(8) {
+    transition-delay: calc(var(--stagger-delay, 0ms) + var(--stagger, 90ms) * 7);
+  }
 
   /* Compensa o header fixo nas âncoras */
   section[id] {
