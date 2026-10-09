@@ -4,14 +4,11 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
-    "build": "npm run build:client && npm run build:ssr",
-    "build:client": "vite build --outDir dist/client",
-    "build:ssr": "vite build --ssr src/ssr.tsx --outDir dist/ssr",
-    "postbuild": "node scripts/prerender.mjs",
-    "preview": "vite preview",
-    "lint": "eslint .",
-    "format": "prettier --write ."
+  "dev": "vite dev",
+  "build": "vite build",
+  "preview": "vite preview",
+  "lint": "eslint .",
+  "format": "prettier --write ."
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
