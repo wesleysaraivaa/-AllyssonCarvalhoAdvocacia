@@ -20,10 +20,22 @@ export function Header({ light = false }: { light?: boolean }) {
   const closeMenu = useCallback(() => setOpen(false), []);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      const top =
+        window.scrollY ??
+        window.pageYOffset ??
+        document.documentElement.scrollTop ??
+        document.body.scrollTop ??
+        0;
+      setScrolled(top > 20);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    document.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      document.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   // mount / unmount with exit animation
@@ -84,14 +96,18 @@ export function Header({ light = false }: { light?: boolean }) {
     };
   }, [mounted, closeMenu]);
 
-  const bgClass = light
-    ? "bg-paper/95 backdrop-blur-md border-b border-rule"
-    : scrolled
-      ? "bg-paper/95 backdrop-blur-md border-b border-rule"
-      : "border-b border-transparent";
+  const isSolid = light || scrolled;
+  const bgClass = isSolid
+    ? "bg-paper border-b border-rule shadow-xs"
+    : "bg-transparent border-b border-transparent";
 
   return (
-    <header className={`sticky top-0 z-40 transition-colors duration-500 ${bgClass}`}>
+    <header
+      className={`sticky top-0 z-40 transition-colors duration-300 ${bgClass}`}
+      style={{
+        backgroundColor: isSolid ? "var(--paper, #f5f3ee)" : "transparent",
+      }}
+    >
       <div
         className={`mx-auto max-w-[1400px] flex items-center justify-between px-6 md:px-10 lg:px-16 transition-[padding] duration-500 ${scrolled ? "py-3.5" : "py-5"}`}
       >
@@ -148,6 +164,7 @@ export function Header({ light = false }: { light?: boolean }) {
             role="dialog"
             aria-modal="true"
             aria-label="Navegação principal"
+            style={{ backgroundColor: "var(--paper, #f5f3ee)" }}
             className={`absolute inset-y-0 right-0 w-full max-w-[420px] bg-paper flex flex-col shadow-2xl will-change-transform transition-[transform,opacity] duration-[420ms] motion-reduce:transition-opacity motion-reduce:duration-150 motion-reduce:translate-x-0 ${
               visible
                 ? "translate-x-0 opacity-100 ease-[cubic-bezier(0.16,1,0.3,1)]"
